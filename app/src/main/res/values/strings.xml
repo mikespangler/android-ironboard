@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ironboard</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="landing_copy">Ironboard is an application that will teach you to code and track your progress throughout Flatiron School.</string>
+    <string name="title_activity_home_screen">HomeScreen</string>
+
+</resources>
