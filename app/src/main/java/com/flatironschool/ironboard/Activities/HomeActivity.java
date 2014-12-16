@@ -1,9 +1,11 @@
-package com.flatironschool.ironboard;
+package com.flatironschool.ironboard.Activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.flatironschool.ironboard.R;
 
 
 public class HomeActivity extends Activity {
