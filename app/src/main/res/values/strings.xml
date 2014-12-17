@@ -8,4 +8,13 @@
     <string name="title_activity_home_screen">HomeScreen</string>
     <string name="title_activity_schedule">ScheduleActivity</string>
 
+    <string name="schedules">{fa-calendar} Schedule</string>
+    <string name="progress">{fa-check-square-o} Your Progress</string>
+    <string name="announcements">{fa-comment-o} Announcements</string>
+    <string name="handraise">{fa-hand-o-up} Handraise</string>
+
+    <string name="title_activity_progress">ProgressActivity</string>
+    <string name="title_activity_announcements">AnnouncementsActivity</string>
+    <string name="title_activity_handraise">HandraiseActivity</string>
+
 </resources>

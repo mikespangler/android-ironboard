@@ -1,21 +1,50 @@
-package com.flatironschool.ironboard.Activities;
+package com.flatironschool.ironboard.activities;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 
 import com.flatironschool.ironboard.R;
 
+import java.util.List;
 
-public class ScheduleActivity extends Activity {
+import models.Schedules;
+import services.IronboardService;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+
+
+public class ScheduleActivity extends ListActivity {
+
+    ArrayAdapter<Schedules.Schedule> mScheduleArrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
-    }
 
+        IronboardService service = new IronboardService();
+
+        mScheduleArrayAdapter = new ArrayAdapter<Schedules.Schedule>(this, R.layout.activity_schedule);
+        setListAdapter(mScheduleArrayAdapter);
+
+        service.loadSchedules(new Callback<Schedules>() {
+            @Override
+            public void success(Schedules schedules, Response response) {
+                List<Schedules.Schedule> schedulesData = schedules.getData();
+                mScheduleArrayAdapter.addAll(schedulesData);
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.d("tag", error.getLocalizedMessage());
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
